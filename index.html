@@ -1,0 +1,226 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PIXELS 2K26</title><meta name="theme-color" content="#f6f9ff"><link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="PIXELS">
+<style>
+html[data-theme=light]{--ink:#10213f;--mut:#5a6b8c;--card:#ffffffd9;--ln:#10213f1c;--inp:#fff;--grid:#1450b812;--sh:0 8px 24px #1450b81c;--b1:#bcd6ff;--b2:#ffd9c2;--b3:#ffc9dc;--bgc:#f6f9ff;--topbg:#f6f9ffcc}
+html[data-theme=dark]{--ink:#fff;--mut:#a9bbe0;--card:#ffffff17;--ln:#ffffff33;--inp:#0a1f45;--grid:#ffffff0d;--sh:0 8px 24px #0006;--b1:#1c5bb8;--b2:#b34a10;--b3:#8a1f55;--bgc:#071b3c;--topbg:#071b3ccc}
+*{box-sizing:border-box;margin:0}
+body{color:var(--ink);background:var(--bgc);font:16px/1.45 "Trebuchet MS","Segoe UI",system-ui,sans-serif;min-height:100vh;transition:background .4s,color .4s}
+.blobs{position:fixed;inset:0;z-index:-2;overflow:hidden;background:linear-gradient(var(--bgc),var(--bgc))}
+.blobs i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.75;animation:fl 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){background:var(--b1);left:-20vmax;top:-20vmax}.blobs i:nth-child(2){background:var(--b2);right:-25vmax;top:25vh;animation-delay:-6s}.blobs i:nth-child(3){background:var(--b3);left:10vw;bottom:-30vmax;animation-delay:-11s}
+@keyframes fl{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+#bg,#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}#bg{z-index:-1}#fx{z-index:40}
+#top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top)) 14px 8px;background:var(--topbg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+#top b{font:900 .95rem "Arial Black",sans-serif;letter-spacing:.04em}
+main{max-width:900px;margin:auto;padding:0 16px calc(100px + env(safe-area-inset-bottom))}
+h2{font:900 1.45rem "Arial Black",Impact,sans-serif;letter-spacing:.02em;margin:14px 0 10px}
+#hero{text-align:center;padding-top:12px}.brand{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--mut);font-size:.85rem}.brand svg{width:34px}
+#cv{width:100%;max-width:560px;height:auto;display:block;margin:6px auto 2px;cursor:pointer}.tag{font-weight:700;margin-bottom:8px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:var(--sh);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.rise{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.97)}}
+button{font:inherit;font-weight:700;border:0;background:linear-gradient(135deg,#ff7a1a,#ef3b4a);color:#fff;padding:11px 18px;border-radius:12px;cursor:pointer;transition:transform .15s,box-shadow .2s;box-shadow:0 4px 12px #ef3b4a44}
+button:hover{transform:translateY(-2px)}button:active{transform:scale(.96)}button.alt{background:var(--card);color:var(--ink);border:1px solid var(--ln);box-shadow:none}button.sm{padding:6px 12px;font-size:.85rem}button[disabled]{opacity:.5;cursor:default;transform:none}
+:focus-visible{outline:3px solid #2f7bff;outline-offset:2px}
+input,select{font:inherit;width:100%;padding:11px;margin:5px 0 10px;border-radius:10px;border:1px solid var(--ln);background:var(--inp);color:var(--ink)}label{font-size:.85rem;color:var(--mut)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px}.chip{white-space:nowrap;padding:7px 14px;border-radius:99px}.chip.on{background:linear-gradient(135deg,#2f7bff,#6b4dff);color:#fff;border:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}.grid .card{margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}.grid .card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #1450b830}
+.art{position:relative;height:130px;display:grid;place-items:center;font-size:3.6rem;overflow:hidden;background:linear-gradient(135deg,var(--c),#0a2a5e)}
+.art::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff22 1px,transparent 1px),linear-gradient(90deg,#ffffff22 1px,transparent 1px);background-size:16px 16px}
+.art span{position:relative;animation:bob 3s ease-in-out infinite;filter:drop-shadow(0 6px 8px #0006)}@keyframes bob{50%{transform:translateY(-6px) rotate(-4deg)}}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.art em{position:absolute;right:8px;top:8px;background:#fff;color:#10213f;font:900 .85rem "Arial Black",sans-serif;padding:3px 9px;border-radius:99px;font-style:normal}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}.body p{font-size:.9rem;color:var(--mut);flex:1}.body small{color:var(--mut)}
+.win{display:inline-block;margin:2px 6px 0 0;padding:2px 9px;border-radius:99px;font-size:.78rem;font-weight:700;color:#10213f}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--ln);font-size:.8rem}.ok{background:#27c47a33}
+.rk{display:flex;align-items:center;gap:12px}.rk b.n{font:900 1.6rem "Arial Black",sans-serif;width:34px}.tot{font:900 1.5rem "Arial Black",sans-serif}
+.bar{height:9px;border-radius:5px;margin-top:6px;transform-origin:left}#app.in .bar{animation:gr 1s cubic-bezier(.2,.8,.2,1) both}@keyframes gr{from{transform:scaleX(0)}}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--ln);font-size:.92rem}
+.note{border-left:5px solid #ff7a1a}.elig{background:linear-gradient(135deg,#2f7bff22,#ff7a1a22)}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--topbg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:6px solid;border-image:repeating-linear-gradient(90deg,#ef3b4a 0 24px,#2f7bff 24px 48px,#ff7a1a 48px 72px,#ffc83d 72px 96px) 1;padding-bottom:env(safe-area-inset-bottom);z-index:9}
+nav button{flex:1;background:none;box-shadow:none;border-radius:0;padding:8px 2px;font-size:.68rem;color:var(--mut)}nav button.on{color:var(--ink);background:var(--ln)}nav i{display:block;font-style:normal;font-size:1.25rem}
+#toast{position:fixed;left:50%;top:70px;transform:translateX(-50%);background:var(--ink);color:var(--bgc);padding:9px 16px;border-radius:99px;font-weight:700;z-index:50;display:none}
+.sheet{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;z-index:30}.sheet .card{background:var(--bgc);width:100%;max-width:720px;margin:auto auto 0;border-radius:20px 20px 0 0;padding:20px;max-height:90vh;overflow:auto}.sheet img{width:100%;border-radius:10px;border:1px solid var(--ln)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="blobs"><i></i><i></i><i></i></div><canvas id="bg" aria-hidden="true"></canvas><canvas id="fx" aria-hidden="true"></canvas><div id="toast"></div>
+<div id="top"><button class="alt sm" id="th" onclick="toggleTheme()" aria-label="Switch light or dark theme">🌙 Dark</button><b>PIXELS 2K26</b><button class="sm" id="dl" onclick="inst()">⬇ Download PIXELS</button></div>
+<main><header id="hero"><div class="brand"><svg viewBox="0 0 60 70"><path d="M5 8h50v30q0 20-25 28Q5 58 5 38z" fill="#1450b8" stroke="#fff" stroke-width="2"/><path d="M18 50V20h6l12 18V20h6v30h-6L24 32v18z" fill="#fff"/><circle cx="45" cy="9" r="5" fill="#ff7a1a"/></svg>Navodaya Institute of Technology · Dept. of CSE</div>
+<canvas id="cv" role="img" aria-label="PIXELS 2K26"></canvas><p class="tag">Where Teams Compete. Where Champions Rise.</p></header><div id="app"></div></main><nav id="nav"></nav>
+<div class="sheet" id="sheet" onclick="this.style.display='none'"><div class="card"><h3>Install PIXELS 2K26</h3><p style="margin:8px 0"><b>Android (Chrome):</b> tap ⋮ menu → <b>Install app</b> / Add to Home screen.</p><p style="margin:8px 0"><b>iPhone (Safari):</b> tap Share → <b>Add to Home Screen</b>.</p><p style="color:var(--mut);font-size:.85rem">Open this page's link in your phone browser first.</p></div></div>
+<div class="sheet" id="cs" onclick="if(event.target===this)this.style.display='none'"><div class="card" id="cb"></div></div>
+<script>
+const CFG={DB:'' /* Firebase Realtime DB URL */,PINS:{captain:'2626',admin:'1234',president:'9999'}};
+const CATS={Technical:'#2f7bff',Sports:'#ef3b4a','E-Sports':'#8a4dff','Indoor Games':'#e69500',Cultural:'#e0408f',Others:'#14a86b'};
+const EV=`Technical|💻|Hackathon|120|A timed team build: turn a problem statement into a working prototype and demo it to the judges.
+Technical|🧠|Technical Quiz|30|Rapid-fire rounds on programming, computer science fundamentals and current technology.
+Technical|🧩|Riddle Hunt|20|Solve linked riddles to unlock the next clue. The team that cracks the final riddle first wins.
+Technical|🗺️|Treasure Hunt|50|Follow clues across campus as a team and race to find the hidden treasure.
+Technical|🤖|AI Bot Development|40|Design and build a chatbot or AI assistant that solves a real problem, then demo it live.
+Technical|🎮|Build a Game|20|Create a playable game from scratch within the time limit. Judged on fun, creativity and polish.
+Technical|🎬|Creating Story & Scenes using AI|40|Use AI tools to write a short story and generate its scenes, then present the finished piece.
+Technical|📣|Brand Promotion using AI|40|Create a brand and its promotion — slogan, poster and pitch — using AI tools.
+Technical|🎤|Debate|20|Argue for or against a topic in a structured format, judged on logic, clarity and rebuttal.
+Technical|🖼️|NFT|30|Create original digital art and present it as an NFT concept, judged on creativity and originality.
+Sports|🏏|Cricket|60|Inter-team cricket matches played in knockout format.
+Sports|🏐|Volley Ball|30|Fast team volleyball matches between the four teams.
+Sports|🤾|Throw Ball|60|Classic throw ball matches — quick reflexes and team coordination win.
+Sports|🔴|Dodge Ball|30|Dodge, throw and survive: the last team standing takes the points.
+E-Sports|📱|BGMI|60|Squad-based mobile battle royale tournament.
+E-Sports|🔥|Free Fire|40|Squad-based Free Fire tournament — survive, loot and outlast the others.
+E-Sports|🙈|Blind Game|20|A blindfolded team challenge that tests trust, communication and teamwork.
+Indoor Games|♟️|Chess|20|One-on-one chess matches. Think ahead and out-plan your opponent.
+Indoor Games|🧊|Cube|10|Speed-solve the Rubik's cube. The fastest solve wins.
+Indoor Games|🎲|Carrom|20|Pocket the coins before your opponent in this classic board game.
+Cultural|💃|Group Dance|25|Choreographed group performance judged on coordination, energy and creativity.
+Cultural|🕺|Solo Dance|25|Take the stage alone and show your moves, expression and rhythm.
+Cultural|🎶|Group Singing|25|Harmonise as a group. Judged on tune, blending and stage presence.
+Cultural|🎤|Solo Singing|25|Sing your heart out. Judged on voice, tune and expression.
+Cultural|🎧|Spotify Vibes|20|A music round: identify songs from short clips and hints.
+Cultural|📺|Mad ADS|10|Make and perform a funny advertisement for any product, on the spot.
+Cultural|🎭|Mono Act|10|A solo acting performance judged on expression, dialogue and impact.
+Cultural|😂|Stand Up Comedy|10|Make the audience laugh with your own original comedy set.
+Cultural|🎪|Skit Drama|20|A short team skit with a story, characters and a message.
+Cultural|🌿|Mehandi|10|Show your artistry with creative, detailed mehandi designs.
+Cultural|🎨|Rangoli|10|Create a colourful rangoli design, judged on creativity and neatness.
+Cultural|🥗|Fireless Cooking|10|Prepare a tasty dish without any fire — judged on taste, creativity and presentation.
+Others|🪢|Tug of War (Boys)|10|Boys' teams pull against each other. Strength and strategy decide the winner.
+Others|🪢|Tug of War (Girls)|10|Girls' teams pull against each other. Strength and strategy decide the winner.
+Others|📸|Photography|10|Capture the best moments and compositions. Judged on creativity and quality.
+Others|🎥|Videography|10|Shoot and present a short video that tells a story. Judged on creativity and quality.`.split('\n').map(s=>{const a=s.split('|');return{cat:a[0],ico:a[1],name:a[2],pts:+a[3],d:a[4]}});
+const DT={t1:{name:'Team Red',color:'#ef3b4a'},t2:{name:'Team Blue',color:'#2f7bff'},t3:{name:'Team Yellow',color:'#e6a800'},t4:{name:'Team Green',color:'#14a86b'}};
+const YR={2:'2nd',3:'3rd',4:'4th'},RN={student:'Student',captain:'Captain',admin:'Admin',president:'President'};
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LK='px26',RM=matchMedia('(prefers-reduced-motion:reduce)').matches,SA=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+let S=norm(null),U=null,view='home',cat='All',q='',mev=0,dp,fresh=true;
+try{U=JSON.parse(localStorage.getItem('px26u'))}catch(e){}
+function norm(s){s=s||{};const t={};for(const k in DT)t[k]=Object.assign({},DT[k],(s.teams||{})[k]);return{teams:t,awards:s.awards||{},entries:s.entries||{},done:s.done||{},info:s.info||{},notes:s.notes||{}}}
+function apply(o,p,v){const k=p.split('/'),l=k.pop();for(const x of k)o=o[x]=o[x]||{};if(v===null)delete o[l];else o[l]=v}
+async function put(path,v){apply(S,path,v);
+ if(CFG.DB){try{await fetch(`${CFG.DB}/${path}.json`,{method:v===null?'DELETE':'PUT',body:JSON.stringify(v)})}catch(e){toast('Offline – change not saved')}}else localStorage.setItem(LK,JSON.stringify(S));render()}
+async function sync(){try{const n=norm(await (await fetch(CFG.DB+'/.json')).json());if(JSON.stringify(n)!==JSON.stringify(S)){S=n;if(!/INPUT|SELECT/.test(document.activeElement.tagName))render()}}catch(e){}}
+if(CFG.DB){sync();setInterval(sync,5000)}else{try{S=norm(JSON.parse(localStorage.getItem(LK)))}catch(e){}}
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t.h);t.h=setTimeout(()=>t.style.display='none',2600)}
+/* theme */
+function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('px26t',t);$('#th').textContent=t==='light'?'🌙 Dark':'☀️ Light';document.querySelector('meta[name=theme-color]').content=t==='light'?'#f6f9ff':'#071b3c'}
+const toggleTheme=()=>setTheme(document.documentElement.dataset.theme==='light'?'dark':'light');
+const PALS={light:['#1450b8','#ef3b4a','#ff7a1a','#0a2a5e'],dark:['#ffffff','#4da3ff','#ff5a64','#ffb03a']},pal=()=>PALS[document.documentElement.dataset.theme];
+setTheme(localStorage.getItem('px26t')||'light');if(SA)$('#dl').style.display='none';
+const isAdm=()=>U&&(U.role==='admin'||U.role==='president'),isPl=()=>U&&(U.role==='student'||U.role==='captain');
+const cnt=e=>Object.values(S.entries).filter(x=>x.e===e).length;
+function totals(){const t={};for(const k in S.teams)t[k]=0;Object.values(S.awards).forEach(a=>{if(a.t in t)t[a.t]+=+a.p});return t}
+function ranked(){const t=totals();return Object.keys(t).sort((a,b)=>t[b]-t[a]).map(k=>({id:k,pts:t[k],...S.teams[k]}))}
+/* login */
+function loginV(){return `<div class="card elig"><b>🎓 Eligibility</b><br>PIXELS 2K26 is open to <b>2nd, 3rd & 4th year CSE students</b> of Navodaya Institute of Technology.</div>
+<div class="card"><h2 style="margin-top:0">Login</h2><label>I am a</label><select id="lr" onchange="lf()"><option value="student">Student</option><option value="captain">Team captain</option><option value="admin">Admin</option><option value="president">President</option></select>
+<label>Full name</label><input id="ln" autocomplete="name">
+<div id="sw"><label>USN</label><input id="lu" autocapitalize="characters" placeholder="e.g. 3NA23CS053"><label>Branch</label><select id="lb"><option value="CSE">Computer Science & Engineering (CSE)</option><option value="X">Other branch</option></select><label>Year</label><select id="ly"><option value="2">2nd year</option><option value="3">3rd year</option><option value="4">4th year</option><option value="1">1st year</option></select>
+<label>Your team</label><select id="lt">${Object.keys(S.teams).map(k=>`<option value="${k}">${esc(S.teams[k].name)}</option>`).join('')}</select></div>
+<div id="pw" style="display:none"><label>PIN</label><input id="lp" type="password" inputmode="numeric" placeholder="PIN given by the organisers"></div><button style="width:100%" onclick="login()">Enter PIXELS</button></div>`}
+function lf(){const r=$('#lr').value;$('#sw').style.display=/student|captain/.test(r)?'block':'none';$('#pw').style.display=r==='student'?'none':'block'}
+function login(){const role=$('#lr').value,name=$('#ln').value.trim();if(name.length<2)return toast('Enter your full name');
+ if(role!=='student'&&$('#lp').value!==CFG.PINS[role])return toast('Wrong PIN');
+ let u={name,role,team:'',usn:'',year:0,uid:'staff'};
+ if(isP(role)){const usn=$('#lu').value.trim().toUpperCase().replace(/[^A-Z0-9]/g,'');
+  if($('#lb').value!=='CSE')return toast('PIXELS 2K26 is for CSE students only');
+  if(+$('#ly').value<2)return toast('Open to 2nd, 3rd & 4th year students only');
+  if(usn.length<6)return toast('Enter a valid USN');
+  u={name,role,team:$('#lt').value,usn,year:+$('#ly').value,uid:usn}}
+ U=u;localStorage.setItem('px26u',JSON.stringify(U));view='home';fresh=true;render();boom(innerWidth/2,200)}
+const isP=r=>r==='student'||r==='captain';
+function logout(){U=null;localStorage.removeItem('px26u');fresh=true;render()}
+/* views */
+function eventCard(i){const e=EV[i],aw=Object.values(S.awards).filter(a=>a.e===i),mine=U.uid&&S.entries[i+'_'+U.uid],done=S.done[i];
+ return `<div class="card"><div class="art" style="--c:${CATS[e.cat]}"><span>${e.ico}</span><img src="images/${i}.jpg" alt="" loading="lazy" onerror="this.remove()"><em>${e.pts} pts</em></div>
+ <div class="body"><b>${esc(e.name)}</b><small>${e.cat} · 2nd–4th year CSE</small><p>${esc(e.d)}</p>
+ ${S.info[i]?`<small>📅 ${esc(S.info[i])}</small>`:'<small>📅 Schedule to be announced</small>'}
+ <small>👥 ${cnt(i)} registered ${done?'· <b>Completed</b>':''}</small>
+ <div>${aw.map(a=>`<span class="win" style="background:${S.teams[a.t].color}33;border:1px solid ${S.teams[a.t].color}">🏆 ${esc(S.teams[a.t].name)} +${a.p}</span>`).join('')}</div>
+ ${isP(U.role)?`<button class="${mine?'alt':''}" ${done&&!mine?'disabled':''} onclick="reg(${i})">${mine?'✓ Registered – tap to cancel':done?'Closed':'Register'}</button>`:`<button class="alt" onclick="mev=${i};go('panel')">Manage event</button>`}</div></div>`}
+function events(){const l=EV.map((e,i)=>i).filter(i=>(cat==='All'||EV[i].cat===cat)&&EV[i].name.toLowerCase().includes(q));
+ return `<h2>Events</h2><div class="card elig">🎓 Open to <b>2nd, 3rd & 4th year CSE students</b> only.</div><input id="sq" placeholder="Search events" value="${esc(q)}" oninput="q=this.value.toLowerCase();rg()"><div class="chips">${['All',...Object.keys(CATS)].map(c=>`<button class="chip ${c===cat?'on':'alt'}" onclick="cat='${c}';render()">${c}</button>`).join('')}</div><div class="grid">${l.map(eventCard).join('')||'<p>No events match.</p>'}</div>`}
+function rg(){const l=EV.map((e,i)=>i).filter(i=>(cat==='All'||EV[i].cat===cat)&&EV[i].name.toLowerCase().includes(q));$('.grid').innerHTML=l.map(eventCard).join('')||'<p>No events match.</p>'}
+function stat(n,l){return `<div class="card" style="text-align:center;margin:0"><div class="tot" data-n="${n}">${n}</div><small style="color:var(--mut)">${l}</small></div>`}
+function home(){const r=ranked(),mx=Math.max(1,r[0].pts),mine=Object.values(S.entries).filter(x=>x.uid===U.uid).length,ppl=new Set(Object.values(S.entries).map(x=>x.uid)).size,pa=Object.values(S.awards).reduce((a,b)=>a+ +b.p,0),N=Object.entries(S.notes).sort((a,b)=>b[1].ts-a[1].ts);
+ return `<div class="card"><b>Welcome, ${esc(U.name)}</b> <span class="pill">${RN[U.role]}${U.team?' · '+esc(S.teams[U.team].name):''}${U.year?' · '+YR[U.year]+' yr CSE':''}</span>
+ ${isP(U.role)?`<p style="color:var(--mut);margin:6px 0">You are registered for <b>${mine}</b> event${mine==1?'':'s'}.</p>`:''}
+ <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button onclick="go('events')">Browse ${EV.length} events</button><button class="alt" onclick="go('board')">Leaderboard</button></div></div>
+ ${N.length?`<h2>Announcements</h2>${N.slice(0,3).map(([k,n])=>`<div class="card note">${esc(n.txt)}<br><small style="color:var(--mut)">${esc(n.by)} · ${new Date(n.ts).toLocaleDateString()}</small></div>`).join('')}`:''}
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">${stat(EV.length,'events')}${stat(ppl,'participants')}${stat(pa,'points awarded')}</div>
+ <h2>Standings</h2>${r.map((t,i)=>`<div class="card"><div class="rk"><b class="n" style="color:${t.color}">${i+1}</b><div style="flex:1"><b>${esc(t.name)}</b><div class="bar" style="width:${Math.max(4,t.pts/mx*100)}%;background:${t.color}"></div></div><span class="tot" data-n="${t.pts}">${t.pts}</span></div></div>`).join('')}`}
+function board(){const r=ranked(),L=Object.entries(S.awards).sort((a,b)=>b[1].ts-a[1].ts).slice(0,20);
+ return `<h2>Leaderboard</h2>${r.map((t,i)=>`<div class="card rk" style="border-left:6px solid ${t.color}"><b class="n">${['🥇','🥈','🥉','4'][i]}</b><div style="flex:1"><b>${esc(t.name)}</b><br><small style="color:var(--mut)">${new Set(Object.values(S.entries).filter(x=>x.t===t.id).map(x=>x.uid)).size} participants</small></div><span class="tot" data-n="${t.pts}">${t.pts}</span></div>`).join('')}
+ <h2>Recent wins</h2><div class="card">${L.length?L.map(([k,a])=>`<div class="row"><span>🏆 ${esc(S.teams[a.t].name)} — ${esc(EV[a.e].name)}</span><b>+${a.p}</b></div>`).join(''):'<p style="color:var(--mut)">No results yet. Winners appear here as soon as the organisers award points.</p>'}</div>`}
+function certs(){const my=Object.values(S.entries).filter(x=>x.uid===U.uid).sort((a,b)=>a.e-b.e);
+ return `<h2>My certificates</h2><div class="card elig">Certificates unlock when the organisers mark an event as completed. Teams that won get a winner certificate.</div>`+(my.length?`<div class="grid">${my.map(x=>{const d=S.done[x.e],w=Object.values(S.awards).some(a=>a.e===x.e&&a.t===x.t);return `<div class="card"><div class="art" style="--c:${CATS[EV[x.e].cat]};height:80px"><span style="font-size:2.2rem">${w?'🏆':'📜'}</span></div><div class="body"><b>${esc(EV[x.e].name)}</b><small>${d?(w?'Winner certificate ready':'Participation certificate ready'):'Locked until the event is completed'}</small><button ${d?'':'disabled'} onclick="cert(${x.e})">${d?'View & download':'🔒 Locked'}</button></div></div>`}).join('')}</div>`:`<div class="card">You haven't registered for any event yet. <button class="sm" onclick="go('events')">Find events</button></div>`)}
+function team(){const m={};Object.values(S.entries).filter(x=>x.t===U.team).forEach(x=>{(m[x.uid]=m[x.uid]||{n:x.n,usn:x.usn,y:x.y,ev:[]}).ev.push(EV[x.e].name)});const k=Object.keys(m);
+ return `<h2>${esc(S.teams[U.team].name)} roster</h2><div class="card">${k.length} member${k.length==1?'':'s'} registered for events.</div>${k.length?`<div class="card">${k.map(u=>`<div class="row"><span><b>${esc(m[u].n)}</b> <small style="color:var(--mut)">${esc(m[u].usn)} · ${YR[m[u].y]} yr</small><br><small style="color:var(--mut)">${m[u].ev.map(esc).join(', ')}</small></span></div>`).join('')}</div>`:'<div class="card">Ask your teammates to log in with this team and register for events.</div>'}`}
+function panel(){const L=Object.entries(S.awards).sort((a,b)=>b[1].ts-a[1].ts),ent=Object.values(S.entries).filter(x=>x.e===mev),N=Object.entries(S.notes).sort((a,b)=>b[1].ts-a[1].ts),opts=sel=>Object.keys(CATS).map(c=>`<optgroup label="${c}">${EV.map((e,i)=>e.cat===c?`<option value="${i}" ${i==sel?'selected':''}>${esc(e.name)} (${e.pts})</option>`:'').join('')}</optgroup>`).join('');
+ let h=`<h2>Award points</h2><div class="card"><label>Event</label><select id="ae" onchange="$('#apv').value=EV[this.value].pts">${opts(mev)}</select>
+ <label>Winning team</label><select id="at">${Object.keys(S.teams).map(k=>`<option value="${k}">${esc(S.teams[k].name)}</option>`).join('')}</select>
+ <label>Points (change for runner-up or bonus)</label><input id="apv" type="number" value="${EV[mev].pts}"><button style="width:100%" onclick="award()">🏆 Award points</button></div>
+ <h2>Manage event</h2><div class="card"><label>Event</label><select onchange="mev=+this.value;render()">${opts(mev)}</select>
+ <label>Date, time & venue (shown to everyone)</label><input id="sc" value="${esc(S.info[mev]||'')}" placeholder="e.g. 10 Oct, 10:00 AM, Seminar Hall"><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="sm" onclick="put('info/${mev}',$('#sc').value.trim()||null);toast('Saved')">Save schedule</button><button class="sm alt" onclick="put('done/${mev}',${S.done[mev]?'null':'true'})">${S.done[mev]?'Reopen event':'Mark completed (unlock certificates)'}</button></div>
+ <p style="margin:12px 0 4px"><b>${ent.length}</b> registered</p>${ent.map(x=>`<div class="row"><span>${esc(x.n)} <small style="color:var(--mut)">${esc(x.usn)} · ${YR[x.y]} yr</small></span><span class="pill" style="background:${S.teams[x.t].color}33">${esc(S.teams[x.t].name)}</span></div>`).join('')}
+ <button class="alt sm" style="margin-top:10px" onclick="csv()">⬇ Export all participants (CSV)</button></div>
+ <h2>Announcements</h2><div class="card"><input id="nt" placeholder="Write an announcement"><button class="sm" onclick="note()">Post</button>${N.map(([k,n])=>`<div class="row"><span>${esc(n.txt)}</span><button class="sm alt" onclick="put('notes/${k}',null)">✕</button></div>`).join('')}</div>
+ <h2>Points log</h2><div class="card">${L.length?L.map(([k,a])=>`<div class="row"><span>${esc(S.teams[a.t].name)} — ${esc(EV[a.e].name)} <small style="color:var(--mut)">by ${esc(a.by)}</small></span><span><b>+${a.p}</b> <button class="sm alt" onclick="delAw('${k}')">✕</button></span></div>`).join(''):'<p style="color:var(--mut)">Nothing awarded yet.</p>'}</div>`;
+ if(U.role==='president')h+=`<h2>President tools</h2><div class="card"><b>Team names</b>${Object.keys(S.teams).map(k=>`<input value="${esc(S.teams[k].name)}" onchange="put('teams/${k}/name',this.value.trim()||'${DT[k].name}')">`).join('')}<button class="alt" onclick="resetAll()">Reset all points, registrations & announcements</button></div>`;return h}
+function me(){return `<h2>Profile</h2><div class="card"><b>${esc(U.name)}</b><br><span class="pill">${RN[U.role]}${U.team?' · '+esc(S.teams[U.team].name):''}</span>${U.usn?`<p style="margin:8px 0">USN ${esc(U.usn)} · ${YR[U.year]} year CSE</p>`:''}
+ ${CFG.DB?'<p style="color:var(--mut);margin:8px 0">✅ Live sync on — everyone sees the same scores.</p>':isAdm()?'<p style="margin:8px 0;color:#c0392b"><b>⚠ Shared database not connected.</b> Data is saved on this device only. Add your Firebase URL (see README) so all phones share scores.</p>':''}
+ <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="alt" onclick="toggleTheme()">Switch theme</button><button onclick="logout()">Log out</button></div></div>`}
+/* actions */
+function reg(i){if(S.done[i]&&!S.entries[i+'_'+U.uid])return toast('Registration closed');const k=i+'_'+U.uid,c=S.entries[k];put('entries/'+k,c?null:{e:i,uid:U.uid,n:U.name,usn:U.usn,y:U.year,t:U.team});toast(c?'Registration cancelled':'Registered for '+EV[i].name);if(!c)boom(innerWidth/2,innerHeight/2)}
+function award(){const p=+$('#apv').value;if(!p)return toast('Enter points');put('awards/a'+Date.now().toString(36),{e:+$('#ae').value,t:$('#at').value,p,by:U.name,ts:Date.now()});toast('Points awarded');boom(innerWidth/2,innerHeight/3)}
+const delAw=k=>{if(confirm('Remove this award?'))put('awards/'+k,null)};
+function note(){const t=$('#nt').value.trim();if(t)put('notes/n'+Date.now().toString(36),{txt:t,by:U.name,ts:Date.now()})}
+async function resetAll(){if(!confirm('Erase ALL points, registrations and announcements?'))return;for(const p of['awards','entries','done','notes'])await put(p,null)}
+function csv(){const r=[['Event','Name','USN','Year','Team']].concat(Object.values(S.entries).map(x=>[EV[x.e].name,x.n,x.usn,YR[x.y],S.teams[x.t].name]));const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.map(l=>l.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n')],{type:'text/csv'}));a.download='pixels2k26-participants.csv';a.click()}
+const go=v=>{view=v;fresh=true;render();scrollTo(0,0)};
+function render(){const f=fresh;fresh=false;$('#hero').style.display=!U||view==='home'?'block':'none';
+ if(!U){$('#nav').style.display='none';$('#app').innerHTML=loginV();anim(f);return}
+ const N=[['home','🏠','Home'],['events','🎯','Events'],['board','🏆','Board']];if(isP(U.role))N.push(['certs','📜','Certificates']);if(U.role==='captain')N.push(['team','👥','Team']);if(isAdm())N.push(['panel','🛠','Manage']);N.push(['me','👤','Me']);
+ if(!N.some(n=>n[0]===view))view='home';
+ $('#nav').style.display='flex';$('#nav').innerHTML=N.map(n=>`<button class="${n[0]===view?'on':''}" onclick="go('${n[0]}')"><i>${n[1]}</i>${n[2]}</button>`).join('');
+ $('#app').innerHTML=({home,events,board,certs,team,panel,me})[view]();anim(f)}
+function anim(f){const a=$('#app');a.classList.toggle('in',f);if(f)a.querySelectorAll('.card').forEach((c,i)=>{c.classList.add('rise');c.style.animationDelay=Math.min(i,14)*45+'ms'});
+ a.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n;if(!f||RM||!n)return;let s=null;const st=t=>{s=s||t;const p=Math.min(1,(t-s)/900);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)})}
+async function inst(){if(dp){dp.prompt();await dp.userChoice;dp=null}else $('#sheet').style.display='flex'}
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+/* certificate */
+function cert(i){const x=S.entries[i+'_'+U.uid];if(!x||!S.done[i])return;const e=EV[i],aw=Object.values(S.awards).filter(a=>a.e===i&&a.t===x.t),win=aw.length>0,pts=aw.reduce((a,b)=>a+ +b.p,0);
+ const c=document.createElement('canvas');c.width=1600;c.height=1130;const g=c.getContext('2d'),W=1600,CL=['#ef3b4a','#2f7bff','#ff7a1a','#ffc83d'];
+ g.fillStyle='#fffdf6';g.fillRect(0,0,W,1130);g.strokeStyle='#0a2a5e';g.lineWidth=10;g.strokeRect(40,40,W-80,1050);g.lineWidth=3;g.strokeRect(62,62,W-124,1006);
+ for(let k=0;k<64;k++){g.fillStyle=CL[k%4];g.fillRect(40+k*24.3,18,16,16);g.fillRect(40+k*24.3,1096,16,16)}
+ g.save();g.translate(W/2-55,95);g.scale(1.8,1.8);g.fillStyle='#1450b8';g.fill(new Path2D('M5 8h50v30q0 20-25 28Q5 58 5 38z'));g.fillStyle='#fff';g.fill(new Path2D('M18 50V20h6l12 18V20h6v30h-6L24 32v18z'));g.fillStyle='#ff7a1a';g.beginPath();g.arc(45,9,5,0,7);g.fill();g.restore();
+ g.textAlign='center';g.fillStyle='#0a2a5e';g.font='bold 34px Georgia,serif';g.fillText('Navodaya Institute of Technology',W/2,290);g.font='24px Georgia,serif';g.fillText('Department of Computer Science & Engineering',W/2,325);
+ g.font='900 76px "Arial Black",Impact,sans-serif';g.fillStyle='#ef3b4a';g.fillText('PIXELS 2K26',W/2,420);
+ g.fillStyle='#0a2a5e';g.font='bold 40px Georgia,serif';g.fillText('CERTIFICATE OF '+(win?'ACHIEVEMENT':'PARTICIPATION'),W/2,490);
+ g.font='italic 28px Georgia,serif';g.fillText('This certificate is proudly presented to',W/2,560);
+ g.fillStyle='#1450b8';let fs=84;g.font=`italic bold ${fs}px Georgia,serif`;while(g.measureText(x.n).width>1300&&fs>40){fs-=4;g.font=`italic bold ${fs}px Georgia,serif`}g.fillText(x.n,W/2,665);
+ g.strokeStyle='#ff7a1a';g.lineWidth=3;g.beginPath();g.moveTo(350,690);g.lineTo(1250,690);g.stroke();
+ g.fillStyle='#0a2a5e';g.font='26px Georgia,serif';g.fillText(`${YR[x.y]} Year CSE · USN ${x.usn} · ${S.teams[x.t].name}`,W/2,740);
+ g.font='30px Georgia,serif';g.fillText(win?`for winning ${e.name} (${e.cat}) and earning ${pts} points for ${S.teams[x.t].name}`:`for participating in ${e.name} (${e.cat})`,W/2,810);g.fillText('at PIXELS 2K26, the annual CSE Technical, Sports & Cultural event.',W/2,855);
+ g.strokeStyle='#0a2a5e';g.lineWidth=2;[[330,'Event Coordinator'],[1270,'President']].forEach(([px,l])=>{g.beginPath();g.moveTo(px-180,990);g.lineTo(px+180,990);g.stroke();g.font='24px Georgia,serif';g.fillText(l,px,1025)});
+ let h=0;for(const ch of x.uid+i)h=(h*31+ch.charCodeAt(0))>>>0;g.font='20px Georgia,serif';g.fillStyle='#5a6b8c';g.fillText('Certificate No. PX26-'+h.toString(36).toUpperCase().slice(0,6),W/2,1050);
+ const url=c.toDataURL('image/png');$('#cb').innerHTML=`<h3>${win?'🏆 Winner':'📜 Participation'} certificate</h3><img src="${url}" alt="Certificate" style="margin:10px 0"><a href="${url}" download="PIXELS2K26-${esc(e.name).replace(/\W+/g,'-')}-certificate.png"><button style="width:100%">⬇ Download certificate</button></a>`;$('#cs').style.display='flex';boom(innerWidth/2,200)}
+/* confetti */
+const fx=$('#fx'),f2=fx.getContext('2d');let CP=[];fx.width=innerWidth;fx.height=innerHeight;addEventListener('resize',()=>{fx.width=innerWidth;fx.height=innerHeight});
+function boom(x,y){if(RM)return;const c=['#ef3b4a','#2f7bff','#ff7a1a','#ffc83d','#14a86b'];for(let i=0;i<70;i++){const a=Math.random()*6.28,s=3+Math.random()*7;CP.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,s:5+Math.random()*7,c:c[i%5],l:70})}if(CP.length===70)cf()}
+function cf(){f2.clearRect(0,0,fx.width,fx.height);CP=CP.filter(p=>p.l>0);for(const p of CP){p.x+=p.vx;p.y+=p.vy;p.vy+=.28;p.l--;f2.globalAlpha=Math.min(1,p.l/25);f2.fillStyle=p.c;f2.fillRect(p.x,p.y,p.s,p.s)}if(CP.length)requestAnimationFrame(cf);else f2.clearRect(0,0,fx.width,fx.height)}
+/* pixel title */
+const GL={P:'11110,10001,10001,11110,10000,10000,10000',I:'11111,00100,00100,00100,00100,00100,11111',X:'10001,10001,01010,00100,01010,10001,10001',E:'11111,10000,10000,11110,10000,10000,11111',L:'10000,10000,10000,10000,10000,10000,11111',S:'01111,10000,10000,01110,00001,00001,11110',2:'01110,10001,00001,00010,00100,01000,11111',K:'10001,10010,10100,11000,10100,10010,10001',6:'00110,01000,10000,11110,10001,10001,01110'};
+const cv=$('#cv'),g=cv.getContext('2d'),SZ=24,CW=35,CH=16;cv.width=CW*SZ;cv.height=CH*SZ;let PS=[],T=0;
+function mkp(){PS=[];[['PIXELS',0],['2K26',9]].forEach(([w,r0])=>{const off=Math.floor((CW-(w.length*6-1))/2);[...w].forEach((ch,k)=>GL[ch].split(',').forEach((row,r)=>[...row].forEach((v,c)=>{if(v==='1'){const a=Math.random()*6.28,d=500+Math.random()*400;PS.push({c:off+k*6+c,r:r0+r,tx:(off+k*6+c)*SZ,ty:(r0+r)*SZ,x:cv.width/2+Math.cos(a)*d,y:cv.height/2+Math.sin(a)*d,d:Math.random()*70})}})))});T=0}
+function loop(){g.clearRect(0,0,cv.width,cv.height);T++;const P=pal();for(const p of PS){if(RM||T>p.d){const f=RM?1:.09;p.x+=(p.tx-p.x)*f;p.y+=(p.ty-p.y)*f}
+ const near=Math.abs(p.x-p.tx)+Math.abs(p.y-p.ty)<3;let col=P[3];if(near)col=P[((Math.floor(p.c*.7+p.r*.7-T*.07))%4+4)%4];
+ g.shadowColor=col;g.shadowBlur=near?10:4;g.fillStyle=col;g.fillRect(p.x+1,p.y+1,SZ-3,SZ-3)}requestAnimationFrame(loop)}
+cv.onclick=mkp;mkp();loop();
+const bg=$('#bg'),b=bg.getContext('2d');let BP=[];function rs(){bg.width=innerWidth;bg.height=innerHeight;BP=Array.from({length:40},()=>({x:Math.random()*bg.width,y:Math.random()*bg.height,s:6+Math.random()*14,v:.2+Math.random()*.5,i:Math.random()*4|0}))}
+rs();addEventListener('resize',rs);(function bl(){b.clearRect(0,0,bg.width,bg.height);const P=pal();for(const p of BP){if(!RM)p.y-=p.v;if(p.y<-20){p.y=bg.height+20;p.x=Math.random()*bg.width}b.globalAlpha=.16;b.fillStyle=P[p.i];b.fillRect(p.x,p.y,p.s,p.s)}requestAnimationFrame(bl)})();
+render();
+</script></body></html>
